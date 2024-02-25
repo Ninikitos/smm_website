@@ -1,0 +1,42 @@
+<div class="footer">
+    <div class="footer__menu">
+        <h2 class="footer__title">Contacts</h2>
+        <div class="footer__info">
+            <div class="footer__menu-contact">
+                <div class="footer__contact">
+                    <a href="tel:+13105046873" class="footer__cell-phone">
+                        +1 (310) 504-6873
+                    </a>
+                    <a href="mailto:elizabeth@hypermediapro.com" class="footer__email">
+                        elizabeth@hypermediapro.com
+                    </a>
+                </div>
+                <div class="footer__address">
+                    <a href="https://www.google.com/maps/place/8383+Wilshire+Blvd,+Beverly+Hills,+CA+90211,+USA/@34.0646555,-118.3759582,17z/data=!3m1!4b1!4m6!3m5!1s0x80c2b955dd4820ff:0x10b64c19bb0307bb!8m2!3d34.0646511!4d-118.3733833!16s%2Fg%2F11v3r171b5?authuser=0&entry=ttu" target="_blank" class="footer__email">
+                        8383 Wilshire Blvd,<br> Beverly Hills, CA 90211
+                    </a>
+                </div>
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/hypermedia_pro/" target="_blank" class="footer__social-link">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/christina-henney-797825118/" target="_blank" class="footer__social-link">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <ul class="footer__menu-items">
+                <li class="footer__menu-item"><a href="{% url 'index' %}" class="footer__menu-link">Home</a></li>
+                <li class="footer__menu-item"><a href="{% url 'about-us' %}" class="footer__menu-link">About us</a></li>
+                <li class="footer__menu-item"><a href="{% url 'services' %}" class="footer__menu-link">Services</a></li>
+                <li class="footer__menu-item"><a href="{% url 'portfolio' %}" class="footer__menu-link">Portfolio</a></li>
+                <li class="footer__menu-item"><a href="{% url 'coaching' %}" class="footer__menu-link">Coaching 1:1</a></li>
+                <li class="footer__menu-item"><a href="{% url 'contact' %}" class="footer__menu-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__privacy">
+        <a href="{% url 'index' %}" class="footer__logo-link"></a>
+        <p class="footer__date">© 2023 Hypermedia</p>
+    </div>
+</div>

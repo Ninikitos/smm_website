@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+	Portfolio
+{% endblock %}
+{% block styles %}
+	<link rel="stylesheet" href="{% static 'webapp/main.css' %}">
+{% endblock %}
+{% block main_content %}
+    <section class="portfolio__header">
+        <div class="contact__title">
+            <h2 class="section__title section__title_bkg_accent-two">Portfolio</h2>
+            <span class="about__title-bkg"></span>
+        </div>
+        <div class="contact__text">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        <span class="about__decor-start portfolio__decor rotation"></span>
+    </section>
+    <section class="portfolio__projects">
+        <p class="project__info not-visible">There are no project. Please add them to your data base</p>
+        <ul class="portfolio__list"></ul>
+        <button class="cta__btn-style portfolio__cta not-visible" id="portfolio__cta">Show more</button>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../../static/js/project_load.js"></script>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+	Thank you!
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'webapp/main.css' %}">
+{% endblock %}
+
+{% block main_content %}
+    <section class="thank-you">
+        <div class="content__wrapper thank-you__container-margin">
+            <h2 class="thank-you__title">
+                Thanks for your application!
+            </h2>
+            <div class="content__text content__text_thank-you">
+                <p>
+                    We will contact you shortly! In the meantime, we invite you to study our cases in more detail.
+                </p>
+            </div>
+            <a href="{% url 'portfolio' %}">
+                <button class="cta__btn-style">Our cases</button>
+            </a>
+            <span class="content__decor_two rotation"></span>
+        </div>
+        <span class="content__decor_three_thank-you"></span>
+    </section>
+{% endblock %}

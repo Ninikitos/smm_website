@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'webapp/main.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    404 page that was not found
+{% endblock %}
+
+{% block main_content %}
+    <section class="thank-you">
+        <div class="content__wrapper thank-you__container-margin">
+            <h2 class="thank-you__title">
+                Opps this page does not exists =(
+            </h2>
+            <div class="content__text content__text_thank-you">
+                <p>
+                    In the meantime, we invite you to study our cases in more detail.
+                </p>
+            </div>
+            <a href="{% url 'portfolio' %}">
+                <button class="cta__btn-style">Our cases</button>
+            </a>
+            <span class="content__decor_two rotation"></span>
+        </div>
+        <span class="content__decor_three_thank-you"></span>
+    </section>
+{% endblock %}

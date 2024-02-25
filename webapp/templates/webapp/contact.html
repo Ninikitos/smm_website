@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+	Contact
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'webapp/main.css' %}">
+{% endblock %}
+
+{% block main_content %}
+	<section class="contact">
+        <div class="contact__header">
+            <div class="contact__title">
+                <h2 class="section__title section__title_bkg_accent-one">Client&nbsp;form</h2>
+                <span class="contact__title-bkg"></span>
+            </div>
+            <div class="contact__text">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                    qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <span class="contact__decor-star"></span>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form__block-wrapper">
+                <div class="form__block">
+                    <label for="name">
+                        <span class="text__accent form__required-star">Your name:</span>
+                    </label>
+                    <input class="form__input"
+                           type="text"
+                           id="name"
+                           name="name"
+                           placeholder="First name"
+                           autocomplete="first name"
+                           maxlength="50"
+                           required>
+                </div>
+                <div class="form__block">
+                    <label for="lastname">
+                        <span class="text__accent form__required-star">Your Lastname:</span>
+                    </label>
+                    <input class="form__input"
+                           type="text"
+                           id="lastname"
+                           name="lastname"
+                           placeholder="Last name"
+                           maxlength="50"
+                           required>
+                </div>
+                <div class="form__block">
+                    <label for="email">
+                        <span class="text__accent form__required-star">E-mail:</span>
+                    </label>
+                    <input class="form__input"
+                           type="email"
+                           id="email"
+                           name="email"
+                           placeholder="myemail@gmail.com"
+                           autocomplete="email address"
+                           required>
+                </div>
+                <div class="form__block">
+                    <label for="phone">
+                         <span class="text__accent form__required-star">Phone:</span>
+                    </label>
+                    <input class="form__input"
+                           type="tel"
+                           id="phone"
+                           name="phone"
+                           placeholder="+1 (203)456-7990"
+                           autocomplete="cell or phone number"
+                           maxlength="20"
+                           required>
+                </div>
+                <div class="form__block">
+                    <label for="company">
+                        <span class="text__accent">Company name:</span>
+                    </label>
+                    <input class="form__input"
+                           type="text"
+                           id="company"
+                           name="company"
+                           placeholder="My Company"
+                           autocomplete="job description"
+                           maxlength="50">
+                </div>
+                <div class="form__block">
+                    <label for="scope">
+                         <span class="text__accent">Scope of the company:</span>
+                    </label>
+                    <input class="form__input"
+                           type="text"
+                           id="scope"
+                           name="scope"
+                           placeholder="skin care/medicine etc."
+                           maxlength="100">
+                </div>
+                <div class="form__block">
+                    <label for="work">
+                        <span class="text__accent">Website:</span>
+                    </label>
+                    <input class="form__input"
+                           type="text"
+                           id="work"
+                           name="work"
+                           placeholder="https://"
+                           maxlength="50">
+                </div>
+                <div class="form__block">
+                    <label for="social">
+                         <span class="text__accent">Social Handle(s):</span>
+                    </label>
+                    <input class="form__input"
+                           type="text"
+                           id="social"
+                           name="social"
+                           placeholder="Inst: @mycopmany"
+                           maxlength="50">
+                </div>
+                <div class="form__block">
+                    <div>
+                        <span class="text__accent">What services are you interested:</span>
+                    </div>
+                    <div class="form__custom-input-container" id="services-drop-down">
+                        <div class="form__input form__custom-select">
+                            <p>Select an option</p>
+                            <span class="form__arrow-down" id="arrow-down-services"></span>
+                        </div>
+                        <div class="form__checkbox-container" id="container-services">
+                            <ul class="form__checkbox-list">
+                                <li>
+                                    <input type="checkbox" name="service" id="instagram" value="instagram">
+                                    <label for="instagram">Instagram marketing</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="service" id="tik-tok" value="tik-tok">
+                                    <label for="tik-tok">Tik-Tok marketing</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="service" id="power-hour" value="power-hour">
+                                    <label for="power-hour">Power hour</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="service" id="other" value="other">
+                                    <label for="other">Other</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__block">
+                    <div>
+                        <span class="text__accent">Have you used a social agency before:</span>
+                    </div>
+                    <div class="form__custom-input-container" id="social-drop-down">
+                        <div class="form__input form__custom-select">
+                            <p>Select an option</p>
+                            <span class="form__arrow-down" id="arrow-down-socials"></span>
+                        </div>
+                        <div class="form__checkbox-container" id="container-socials">
+                            <div class="form__checkbox-list form__checkbox-list_flex">
+                                <div>
+                                    <input type="radio" id="yes" name="is_social_agency" value="yes">
+                                    <label for="yes">Yes</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="no" name="is_social_agency" value="no">
+                                    <label for="no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__block">
+                    <label for="budget">
+                        <span class="text__accent">What is your budget:</span>
+                    </label>
+                    <input class="form__input"
+                           type="number"
+                           min="1000"
+                           max="20000"
+                           step="1000"
+                           id="budget"
+                           name="budget"
+                           placeholder="Min is 1000$"
+                           maxlength="5"
+                           value="0">
+                </div>
+                <div class="form__block">
+                    <label for="start-date">
+                         <span class="text__accent">When is your ideal start date:</span>
+                    </label>
+                    <input class="form__input"
+                           type="date"
+                           id="start-date"
+                           name="start-date">
+                </div>
+                <div class="form__block form__input_textarea">
+                    <label for="message">
+                        <span class="text__accent">Anything else we should know?</span>
+                    </label>
+                    <textarea class="form__input form__input_textarea_border form__input_textarea_size"
+                              id="message"
+                              name="message"
+                              placeholder="Type your message here..."
+                              maxlength="1200"></textarea>
+                </div>
+                <div class="form__input_button_wrapper">
+                    <button class="cta__btn-style form__input_textarea_button" type="submit">Send</button>
+                </div>
+            </div>
+        </form>
+    </section>
+{% endblock %}

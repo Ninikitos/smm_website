@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+	About us
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'webapp/main.css' %}">
+{% endblock %}
+
+{% block main_content %}
+    <section class="hero">
+        <div class="hero__bkg-img"></div>
+        <div class="marquee__wrapper">
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+        </div>
+    </section>
+    <section class="about about__section-mb">
+        <div class="about__wrapper">
+            <div class="about__content">
+                <div class="about__title-wrapper">
+                    <h1 class="section__title section__title_bkg_accent-one">{{ about_content.about_title }}</h1>
+                </div>
+                <div class="about__text">
+                    <p>
+                        {{ about_content.about_description|safe }}
+                    </p>
+                </div>
+                <a href="{% url 'contact' %}">
+                    <button class="cta__btn-style">Let's work</button>
+                </a>
+            </div>
+            <div class="about__media-content">
+                <div class="about__media-left">
+                    <span class="about__decor-start rotation"></span>
+                    <img class="img__style" src="../../../media/{{ about_content.about_image_one }}" alt="photo: {{ about_content.about_slug_one }}">
+                </div>
+                <div class="about__media-right about__media-right_custom">
+                    <img class="img__style" src="../../../media/{{ about_content.about_image_two }}" alt="photo: {{ about_content.about_slug_two }}">
+                </div>
+            </div>
+        </div>
+        <span class="about-page__decor"></span>
+    </section>
+
+{% endblock %}

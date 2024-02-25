@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'webapp/main.css' %}">
+{% endblock %}
+
+{% block page_title %}
+	Hyper Media Pro - SMM Agency
+{% endblock %}
+
+{% block main_content %}
+	<section class="hero">
+        <div class="hero__bkg-img"></div>
+        <div class="marquee__wrapper">
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <div class="about__wrapper">
+            <div class="about__content">
+                <div class="about__title-wrapper">
+                    <h2 class="section__title section__title_bkg_accent-two">What we do?</h2>
+                </div>
+                <div class="about__text">
+                    <p>
+                        We're here to make things easy for you. <span>We handle everything</span>
+                        from managing your social media to creating engaging,
+                        professional content. We aim to enhance your online presence,
+                        connect with your target audience, and meet your marketing goals.
+                        Our services are designed just for you, considering your brand,
+                        industry, and goals. We cover <span>all major platforms like Instagram,
+                        Facebook, TikTok, Pinterest, LinkedIn, and YouTube.</span>
+                        With us, you don't need to worry about a thing.
+                    </p>
+                </div>
+                <button class="cta__btn-style">Our services</button>
+            </div>
+            <div class="about__media-content">
+                <div class="about__media-left">
+                    <span class="about__decor-start rotation"></span>
+                    <img class="img__style" src="../../static/webapp/img/index/about/hyper_media_pro_smm_agency_la.png" alt="photo: Hyper media promotion">
+                </div>
+                <div class="about__media-right">
+                    <img class="img__style" src="../../static/webapp/img/index/about/hyper_media_pro_smm_agency_in_la.png" alt="photo: Smm promotion in la">
+                </div>
+            </div>
+        </div>
+        <span class="about__bkg-decor"></span>
+    </section>
+    <section class="content">
+        <div class="content__wrapper">
+            <h2 class="content__title">
+                We create content for you!
+            </h2>
+            <div class="content__text">
+                <p>
+                    Feel like content creation is a never-ending task on
+                    your to-do list? Let's take that off your plate.
+                    Whether it's capturing stunning photos, creating engaging
+                    videos, or designing eye-catching graphics, our team is all in.
+                    We dive deep into understanding your brand,
+                    so every piece of content feels authentically 'you'
+                    and supports your growth.  We're here to bring your
+                    vision to life while you focus on what you do
+                    best - growing your business.
+                </p>
+            </div>
+            <button class="cta__btn-style">Explore our success stories</button>
+            <div class="content__img">
+                <img class="img__style" src="../../static/webapp/img/index/content/hyper_media_pro_instagram_growth.jpg" alt="photo: Grow on instagram in LA">
+            </div>
+            <span class="content__decor_one"></span>
+            <span class="content__decor_two"></span>
+        </div>
+        <span class="content__decor_three"></span>
+    </section>
+    <section class="clients">
+        <div class="clients__title-wrapper">
+            <h2 class="section__title section__title_bkg_accent-one">Our clients</h2>
+        </div>
+        <div class="clients__content-wrapper">
+            <ul class="clients__projects">
+                {% for project in projects %}
+                	<li class="flip-card">
+                        <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="flip-card-img">
+                                <img src="../../../media/{{ project.cover }}" alt="Avatar">
+                            </div>
+                            <h3 class="flip-card-title">{{ project.name }}</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="flip-card-text">
+                                <p>
+                                    {{ project.review }}
+                                </p>
+                            </div>
+                            <a href="{% url 'project-detail' slug=project.slug %}">
+                                <button class="cta__btn-style">Read completely</button>
+                            </a>
+                        </div>
+                    </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="marquee__wrapper">
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+        </div>
+    </section>
+    <section class="info">
+        <div class="info__img"></div>
+        <div class="info__content">
+            <h2 class="info__title">
+                Get noticed, get connected, and get ahead with our social media mastery
+            </h2>
+            <a href="{% url 'contact' %}">
+                <button class="cta__btn-style">Transform My Online Presence</button>
+            </a>
+            <span class="info__decor_one rotation"></span>
+            <span class="info__decor_two"></span>
+        </div>
+    </section>
+{% endblock %}

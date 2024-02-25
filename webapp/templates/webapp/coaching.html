@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+	Coaching
+{% endblock %}
+
+{% block styles %}
+	<link rel="stylesheet" href="{% static 'webapp/main.css' %}">
+{% endblock %}
+
+{% block main_content %}
+    <section class="about about__section-mt about__section-mb">
+        <div class="about__wrapper">
+            <div class="about__content">
+                <div class="about__title-wrapper">
+                    <h1 class="section__title section__title_bkg_accent-two">{{ coaching_content.coaching_title }}</h1>
+                </div>
+                <div class="about__text">
+                    <p>
+                        {{ coaching_content.coaching_description|safe }}
+                    </p>
+                </div>
+                <button class="cta__btn-style">Book a meet</button>
+            </div>
+            <div class="about__media-content">
+                <div class="about__media-left">
+                    <span class="about__decor-start rotation"></span>
+                    <img class="img__style" src="../../../media/{{ coaching_content.coaching_image_one }}" alt="photo: {{ coaching_content.coaching_slug_one }}">
+                </div>
+                <div class="about__media-right">
+                    <img class="img__style" src="../../../media/{{ coaching_content.coaching_image_two }}" alt="photo: {{ coaching_content.coaching_slug_two }}">
+                </div>
+            </div>
+        </div>
+    </section>
+    <span class="about-page__decor"></span>
+{% endblock %}

@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+	{{ project.name }}
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="{% static 'webapp/main.css' %}">
+{% endblock %}
+
+{% block main_content %}
+    <section class="project__section">
+        <div class="project_header">
+            <div class="about__content">
+                <div class="about__title-wrapper">
+                    <h1 class="section__title section__title_bkg_accent-two">{{ project.name }}</h1>
+                </div>
+                <h2 class="text__accent project__sub-title">The Challenge</h2>
+                <div class="about__text project__text">
+                    <p>
+                        {{ project.description }}
+                    </p>
+                </div>
+                <h2 class="text__accent project__sub-title">The 30 Day Results</h2>
+                <ul class="project__stat">
+                    <li class="project__stat-item">
+                        <h3 class="project__stat-num">{{ project.stat_one }}</h3>
+                        <span class="project__stat-title">{{ project.text_one }}</span>
+                    </li>
+                    <li class="project__stat-item">
+                        <h3 class="project__stat-num">{{ project.stat_two }}</h3>
+                        <span class="project__stat-title">{{ project.text_two }}</span>
+                    </li>
+                    <li class="project__stat-item">
+                        <h3 class="project__stat-num">{{ project.stat_three }}</h3>
+                        <span class="project__stat-title">{{ project.text_three }}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="about__media-content about__media-content_projects">
+                <div>
+                    <h2 class="text__accent project__sub-title">The Strategy</h2>
+                </div>
+                <ul class="about__text project__text">
+                    {{ project.strategy|safe }}
+                </ul>
+            </div>
+        </div>
+    </section>
+    {% if project.projectimagesmodel_set.all %}
+        <section class="media__content">
+            <div>
+                <div>
+                    <h2 class="text__accent project__sub-title">Content Production</h2>
+                </div>
+                <div class="about__text project__text">
+                    <p>
+                        {{ project.photo_content_description }}
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-custom-wrapper">
+                <div class="swiper my-swiper">
+                    <div class="swiper-button-prev swiper-nav-custom">←</div>
+                    <div class="swiper-button-next swiper-nav-custom">→</div>
+                    <div class="swiper-wrapper">
+                        {% for image in images %}
+                            <img class="swiper-slide image-hover" src="../../../media/{{ image.image }}" alt="photo: {{ image.image_slug }}"
+                                    onclick="openLightbox(this.src)">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <span></span>
+    {% endif %}
+    {% if project.projectvideosmodel_set.all %}
+        <section class="media__content">
+            <div>
+                <div>
+                    <h2 class="text__accent project__sub-title">Content Production</h2>
+                </div>
+                <div class="about__text project__text">
+                    <p>
+                        {{ project.video_content_description }}
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-custom-wrapper">
+                <div class="swiper my-swiper_video">
+                    <div class="swiper-button-prev nav-video-button-prev swiper-nav-custom">←</div>
+                    <div class="swiper-button-next nav-video-button-next swiper-nav-custom">→</div>
+                    <div class="swiper-wrapper">
+                        {% for video in videos %}
+                            <div class="swiper-slide image-hover">
+                                <video class="video__cover" id="video_{{ forloop.counter }}">
+                                    <source src="../../../media/{{ video.video }}" type="video/mp4">
+                                </video>
+                                <span class="swiper-slide_video-play-btn" id="play_button_{{ forloop.counter }}" onclick="togglePlayPause({{ forloop.counter }})">Play</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <span></span>
+    {% endif %}
+    {% if project.projectmediastatmodel_set.all %}
+        <section class="media__content">
+            <div>
+                <div>
+                    <h2 class="text__accent project__sub-title">Media Statistics</h2>
+                </div>
+                <div class="about__text project__text">
+                    <p>
+                        {{ project.media_stat_content_description }}
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-custom-wrapper">
+                <div class="swiper my-swiper_media_stat">
+                    <div class="swiper-button-prev nav-media-stat-button-prev swiper-nav-custom">←</div>
+                    <div class="swiper-button-next nav-media-stat-button-next swiper-nav-custom">→</div>
+                    <div class="swiper-wrapper">
+                        {% for stat in media_stats %}
+                            <img class="swiper-slide image-hover" src="../../../media/{{ stat.image }}" alt="photo: {{ stat.image_slug }}"
+                                    onclick="openLightbox(this.src)">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <span></span>
+    {% endif %}
+    <section class="marquee__wrapper">
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+            <div class="marquee">
+                <span>
+                    Elevate Your Online Presence with Our Full Service Social Media Marketing Solutions Today!
+                </span>
+            </div>
+        </section>
+    <section class="info">
+        <div class="info__img"></div>
+        <div class="info__content">
+            <h2 class="info__title">
+                Get noticed, get connected, and get ahead with our social media mastery
+            </h2>
+            <button class="cta__btn-style">Transform My Online Presence</button>
+            <span class="info__decor_one rotation"></span>
+            <span class="info__decor_two"></span>
+        </div>
+    </section>
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Preview">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper(".my-swiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            breakpoints:{
+                // when window width is >= 320px
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 0
+                },
+                // when window width is >= 480px
+                600: {
+                  slidesPerView: 2,
+                  spaceBetween: 20
+                },
+                // when window width is >= 640px
+                800: {
+                  slidesPerView: 2,
+                  spaceBetween: 20
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 30
+                }
+            }
+        });
+        new Swiper(".my-swiper_video", {
+            navigation: {
+                nextEl: ".nav-video-button-next",
+                prevEl: ".nav-video-button-prev"
+            },
+            breakpoints:{
+                // when window width is >= 320px
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 0
+                },
+                // when window width is >= 480px
+                630: {
+                  slidesPerView: 2,
+                  spaceBetween: 20
+                },
+                // when window width is >= 640px
+                800: {
+                  slidesPerView: 2,
+                  spaceBetween: 20
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 30
+                }
+            }
+        });
+        new Swiper(".my-swiper_media_stat", {
+            navigation: {
+                nextEl: ".nav-media-stat-button-next",
+                prevEl: ".nav-media-stat-button-prev"
+            },
+            breakpoints:{
+                // when window width is >= 320px
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 0
+                },
+                // when window width is >= 480px
+                600: {
+                  slidesPerView: 2,
+                  spaceBetween: 20
+                },
+                // when window width is >= 640px
+                800: {
+                  slidesPerView: 2,
+                  spaceBetween: 20
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 30
+                }
+            }
+        });
+    </script>
+{% endblock %}
