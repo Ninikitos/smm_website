@@ -1,12 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block meta %}
+	<meta content="Hypermedia - Social Media Marketing, CA" name="author">
+    <link rel="canonical" href="https://www.hypermediapro.com/index.html">
+    <meta content="Highly customizable Social Media Marketing plans to grow your business in Los Angeles fast" name="description">
+    <meta name="keywords"
+          content="engagement and targeting, instagram ads, social media agency, smm in LA, SMM in los angeles, monthly content plan, customizable Social Media Marketing plans">
+    <meta property="og:title" content="Hypermedia - Social Media Marketing, CA">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Hypermedia - Social Media Marketing, CA">
+    <meta property="og:url" content="https://www.hypermediapro.com">
+    <meta property="og:image" content="https://www.hypermediapro.com/">
+    <meta property="og:image:alt" content="Hypermedia - Social Media Marketing, CA">
+    <meta property="og:description" content="Highly customizable Social Media Marketing plans to grow your business in Los Angeles fast">
+{% endblock %}
+
 {% block styles %}
     <link rel="stylesheet" href="{% static 'webapp/main.css' %}">
 {% endblock %}
 
 {% block page_title %}
-	Hyper Media Pro - SMM Agency
+	Hyper Media Pro - SMM Agency in Los Angeles
 {% endblock %}
 
 {% block main_content %}
@@ -48,7 +63,9 @@
                         With us, you don't need to worry about a thing.
                     </p>
                 </div>
-                <button class="cta__btn-style">Our services</button>
+                <a href="{% url 'services' %}">
+                    <button class="cta__btn-style">Our services</button>
+                </a>
             </div>
             <div class="about__media-content">
                 <div class="about__media-left">
@@ -80,7 +97,9 @@
                     best - growing your business.
                 </p>
             </div>
-            <button class="cta__btn-style">Explore our success stories</button>
+            <a href="{% url 'portfolio' %}">
+                <button class="cta__btn-style">Explore our success stories</button>
+            </a>
             <div class="content__img">
                 <img class="img__style" src="../../static/webapp/img/index/content/hyper_media_pro_instagram_growth.jpg" alt="photo: Grow on instagram in LA">
             </div>
@@ -98,23 +117,23 @@
                 {% for project in projects %}
                 	<li class="flip-card">
                         <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="flip-card-img">
-                                <img src="../../../media/{{ project.cover }}" alt="Avatar">
+                            <div class="flip-card-front">
+                                <div class="flip-card-img">
+                                    <img src="../../../media/{{ project.cover }}" alt="Avatar">
+                                </div>
+                                <h3 class="flip-card-title">{{ project.name }}</h3>
                             </div>
-                            <h3 class="flip-card-title">{{ project.name }}</h3>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="flip-card-text">
-                                <p>
-                                    {{ project.review }}
-                                </p>
+                            <div class="flip-card-back">
+                                <div class="flip-card-text">
+                                    <p>
+                                        {{ project.review }}
+                                    </p>
+                                </div>
+                                <a href="{% url 'project-detail' slug=project.slug %}">
+                                    <button class="cta__btn-style">Read completely</button>
+                                </a>
                             </div>
-                            <a href="{% url 'project-detail' slug=project.slug %}">
-                                <button class="cta__btn-style">Read completely</button>
-                            </a>
                         </div>
-                    </div>
                     </li>
                 {% endfor %}
             </ul>

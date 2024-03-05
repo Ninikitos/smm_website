@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ["13.56.234.114"]
 # SECRET_KEY = 'django-insecure--nmjjr^21)u-qnjh-_0s_-=3r#2ksnr=64ys3)3_zlx67y-(n3'
 #
 # # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+# DEBUG = False
 #
 # ALLOWED_HOSTS = ['*']
 
