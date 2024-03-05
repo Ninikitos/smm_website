@@ -1363,6 +1363,9 @@ form span{
 }
 
 @media screen and (max-width: 468px) {
+    .hero__bkg-img{
+        background: url("../../static/webapp/img/hyper_media_pro_hero.jpg") center right -200px / cover no-repeat;
+    }
     .section__title{
         display: inline;
         font-size: 40px;

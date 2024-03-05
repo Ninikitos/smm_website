@@ -34,6 +34,9 @@ h1, h2 {
     font-weight: 600;
     line-height: 1;
 }
+button{
+    color: var(--main);
+}
 .not-visible{
     opacity: 0;
 }
@@ -447,14 +450,11 @@ footer{
         font-size: 40px;
     }
     .header__mob-items{
-        gap: 60px;
+        gap: 40px;
     }
-    .mobile-link-bkg{
+    .mobile-link-bkg {
         width: 200px;
         height: 60px;
-    }
-    .active{
-        padding-top: 40px;
     }
 }
 
