@@ -1362,6 +1362,12 @@ form span{
     .contact__title-bkg{
         display: none;
     }
+    .thank-you__title{
+        font-size: 48px;
+    }
+    .content__text_thank-you{
+        z-index: 0;
+    }
 
 }
 @media screen and (max-width: 700px) {

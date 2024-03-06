@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render
+from django.urls import reverse
 
 from .models import (AboutPageModel,
                      ServicePageModel,
@@ -113,10 +114,10 @@ def contact(request):
             'New client request from a website',
                 message,
             settings.EMAIL_HOST_USER,
-            ['chhenney@gmail.com']
+            ['ninikitos90@gmail.com']
         )
         email.send()
-        return HttpResponseRedirect("thank_you")
+        return HttpResponseRedirect(reverse('thank-you'))
     else:
         return render(request, "webapp/contact.html")
 
