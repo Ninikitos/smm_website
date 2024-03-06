@@ -96,8 +96,8 @@
                     <div class="swiper-wrapper">
                         {% for video in videos %}
                             <div class="swiper-slide image-hover">
-                                <video class="video__cover" id="video_{{ forloop.counter }}">
-                                    <source src="../../../media/{{ video.video }}" type="video/mp4">
+                                <video class="video__cover" id="video_{{ forloop.counter }}" poster="">
+                                    <source src="../../../media/{{ video.video }}#t=0.001" type="video/mp4">
                                 </video>
                                 <span class="swiper-slide_video-play-btn" id="play_button_{{ forloop.counter }}" onclick="togglePlayPause({{ forloop.counter }})">Play</span>
                             </div>
