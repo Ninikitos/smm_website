@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block meta %}
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <script>
+       function onSubmit(token) {
+         document.getElementById("form").submit();
+       }
+     </script>
+{% endblock %}
+
 {% block page_title %}
 	Contact
 {% endblock %}
@@ -30,7 +39,7 @@
             </div>
             <span class="contact__decor-star"></span>
         </div>
-        <form method="POST">
+        <form id="form" method="POST">
             {% csrf_token %}
             <div class="form__block-wrapper">
                 <div class="form__block">
@@ -217,7 +226,7 @@
                               maxlength="1200"></textarea>
                 </div>
                 <div class="form__input_button_wrapper">
-                    <button class="cta__btn-style form__input_textarea_button" type="submit">Send</button>
+                    <button class="g-recaptcha cta__btn-style form__input_textarea_button" data-sitekey="6LeAI5gpAAAAANaXePL9X-glaaxh81FhL4ixZkyC" data-callback="onSubmit">Send</button>
                 </div>
             </div>
         </form>
