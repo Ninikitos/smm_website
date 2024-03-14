@@ -114,7 +114,7 @@ def contact(request):
             'New client request from a website',
                 message,
             settings.EMAIL_HOST_USER,
-            ['elizabeth@hypermediapro.com']
+            ['ninikitos90@gmail.com']
         )
         email.send()
         return HttpResponseRedirect(reverse('thank-you'))
