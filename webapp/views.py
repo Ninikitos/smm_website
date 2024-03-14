@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render
 from django.urls import reverse
+from django_recaptcha.fields import ReCaptchaField
 
 from .models import (AboutPageModel,
                      ServicePageModel,
@@ -90,6 +91,10 @@ def contact(request):
         if start_date == "":
             start_date = datetime.now().strftime("%Y-%m-%d")
         message = request.POST.get('message', '')
+        captcha = ReCaptchaField(
+            public_key='6LeAI5gpAAAAANaXePL9X-glaaxh81FhL4ixZkyC',
+            private_key='6LeAI5gpAAAAAGw2k2bwppdaC8uygIR_Yk6rI1T6',
+        )
 
         # Create an instance of the model and save the data
         ClientInformation.objects.create(
