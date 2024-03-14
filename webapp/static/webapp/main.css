@@ -11,8 +11,10 @@
     left: 50%;
     border: 1px solid var(--main);
     width: 100%;
-    min-width: 120px;
-    height: 50px;
+    max-width: 150px;
+    max-height: 50px;
+    min-width: 80px;
+    min-height: 30px;
     border-radius: 50%;
 }
 .section__title_bkg_accent-one::before{
@@ -457,6 +459,7 @@
     padding: 0 10px;
 }
 .portfolio__decor{
+    top: -80px;
     right: 20px;
     z-index: -1;
 }
@@ -872,6 +875,13 @@ form span{
 }
 .project__text{
     max-width: 500px;
+}
+.project__text > li{
+    list-style-type: disc;
+    list-style-position: inside;
+}
+.project__text > li:not(:last-child){
+    margin-bottom: 14px;
 }
 .project__stat{
     width: 100%;
@@ -1414,8 +1424,8 @@ form span{
         font-size: 40px;
     }
     .section__title::before{
-        height: 50px;
-        min-width: 140px
+        min-height: 40px;
+        max-width: 100%;
     }
     .section__title_bkg_accent-one::after{
         width: 28px;
