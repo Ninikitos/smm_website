@@ -777,10 +777,9 @@ form span{
     line-height: 1.5;
 }
 .form__input_button_wrapper{
-    grid-column: span 2;
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 40px;
     margin-bottom: 75px;
 }
 .form__input_textarea_button{
@@ -1397,6 +1396,12 @@ form span{
     .hero__title{
         font-size: 48px;
         max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .form__input_button_wrapper{
+        flex-direction: column;
     }
 }
 
