@@ -29,7 +29,6 @@ ALLOWED_HOSTS = ["13.56.234.114", "hypermediapro.com", "www.hypermediapro.com"]
 # Application definition
 INSTALLED_APPS = [
     'webapp',
-    'django_recaptcha',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
