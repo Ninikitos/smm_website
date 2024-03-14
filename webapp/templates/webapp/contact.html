@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block meta %}
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
+
 {% block page_title %}
 	Contact
 {% endblock %}
@@ -218,6 +222,7 @@
                 </div>
                 <div class="form__input_button_wrapper">
                     <button class="cta__btn-style form__input_textarea_button" type="submit">Send</button>
+                    <div class="g-recaptcha" data-sitekey="6LeAI5gpAAAAANaXePL9X-glaaxh81FhL4ixZkyC"></div>
                 </div>
             </div>
         </form>
