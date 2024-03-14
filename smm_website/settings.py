@@ -147,3 +147,4 @@ EMAIL_HOST_PASSWORD = "uuje xqmh kezf agwb"
 #reCAPTCHA
 RECAPTCHA_PUBLIC_KEY = '6LeAI5gpAAAAANaXePL9X-glaaxh81FhL4ixZkyC'
 RECAPTCHA_PRIVATE_KEY = '6LeAI5gpAAAAAGw2k2bwppdaC8uygIR_Yk6rI1T6'
+RECAPTCHA_PROXY = {'http': 'http://hypermediapro.com', 'https': 'https://hypermediapro.com'}
