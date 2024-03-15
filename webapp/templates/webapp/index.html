@@ -119,7 +119,7 @@ Feeling overwhelmed by the never-ending task of content creation on your to-do l
         </div>
         <div class="clients__content-wrapper">
             <ul class="clients__projects">
-                {% for project in projects %}
+                {% for project in projects|slice:":3" %}
                 	<li class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">

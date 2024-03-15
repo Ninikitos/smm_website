@@ -75,6 +75,9 @@ class ProjectImagesAdmin(admin.ModelAdmin):
 
         update_slug_from_image(obj, image_field, slug_field)
 
+class ProjectModelAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_home_page',)
+
 class ProjectVideosAdmin(admin.ModelAdmin):
     list_display = ('name', 'project_name')
     list_filter = ('project__name',)
@@ -97,7 +100,7 @@ admin.site.register(AboutPageModel, AboutPageAdmin)
 admin.site.register(ServicePageModel, ServicePageAdmin)
 admin.site.register(CoachingPageModel, CoachingPageAdmin)
 admin.site.register(ClientInformation, ClientInformationAdmin)
-admin.site.register(ProjectModel)
+admin.site.register(ProjectModel, ProjectModelAdmin)
 admin.site.register(ProjectImagesModel, ProjectImagesAdmin)
 admin.site.register(ProjectVideosModel, ProjectVideosAdmin)
 admin.site.register(ProjectMediaStatModel, ProjectMediaStatAdmin)

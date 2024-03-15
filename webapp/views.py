@@ -18,7 +18,13 @@ from django.conf import settings
 
 
 def index(request):
-    projects = ProjectModel.objects.all().order_by('-id')[:3]
+    projects_model = ProjectModel.objects.all()
+    projects = []
+
+    for project in projects_model:
+        if project.is_home_page:
+            projects.append(project)
+
     return render(request, "webapp/index.html", {
         'projects': projects
     })
