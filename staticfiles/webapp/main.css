@@ -11,11 +11,15 @@
     left: 50%;
     border: 1px solid var(--main);
     width: 100%;
+    min-height: 50px;
+    border-radius: 50%;
+}
+.section__title-project::before{
+    width: 100%;
     max-width: 150px;
     max-height: 50px;
     min-width: 80px;
     min-height: 30px;
-    border-radius: 50%;
 }
 .section__title_bkg_accent-one::before{
     transform: translate(-50%, -50%) rotate(-5.19deg);
