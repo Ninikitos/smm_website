@@ -39,9 +39,11 @@ button{
 }
 .not-visible{
     opacity: 0;
+    visibility: hidden;
 }
 .is-visible{
     opacity: 1;
+    visibility: visible;
 }
 .opacity-0{
     opacity: 0;

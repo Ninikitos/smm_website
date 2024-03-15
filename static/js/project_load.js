@@ -12,8 +12,7 @@ const handleGetProjects = () => {
         },
         dataType: 'json',
         success: (response) => {
-            max_size = response.max;
-            min_size = response.min
+            min_size = response.min;
             const data = response.data;
             data.map(project => {
             const newPost = document.createElement('li');
@@ -31,10 +30,9 @@ const handleGetProjects = () => {
 
             setTimeout(() => {
                     newPost.classList.add('appear');
-                    loadMoreBtn.classList.add("is-visible");
                 }, 10);
             });
-            if (max_size){
+            if (min_size <= visibleProjects){
                 loadMoreBtn.classList.add("not-visible");
             }
             if (min_size === 0){
