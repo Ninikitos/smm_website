@@ -748,7 +748,7 @@ form span{
 }
 .form__checkbox-container{
     visibility: hidden;
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     width: 100%;
     top: 70px;
