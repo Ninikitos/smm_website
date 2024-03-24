@@ -26,7 +26,7 @@ GOOGLE_RECAPTCHA_PRIVATE_KEY = '6LeAI5gpAAAAAGw2k2bwppdaC8uygIR_Yk6rI1T6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["13.56.234.114", "hypermediapro.com", "www.hypermediapro.com"]
+ALLOWED_HOSTS = ["hypermediapro.com", "www.hypermediapro.com"]
 
 # Application definition
 INSTALLED_APPS = [
