@@ -21,7 +21,7 @@ class StaticSitemap(Sitemap):
     protocol = 'https'
 
     def items(self):
-        return ['https://hypermediapro.com/index.html', 'about-us', 'services', 'portfolio', 'coaching']  # returning static pages; home and contact us
+        return ['index', 'about-us', 'services', 'portfolio', 'coaching']  # returning static pages; home and contact us
 
     def location(self, item):
         return reverse(item)
