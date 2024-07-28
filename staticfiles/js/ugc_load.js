@@ -5,7 +5,7 @@ const projectsInfo = document.querySelector(".project__info");
 let visibleProjects = 4;
 const handleGetProjects = () => {
     $.ajax({
-        url: `/portfolio/portfolio-json/${visibleProjects}/`,
+        url: `/portfolio/ugc-json/${visibleProjects}/`,
         type: 'GET',
         headers: {
             'X-Requested-With': 'XMLHttpRequest'
