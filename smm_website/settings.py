@@ -24,9 +24,10 @@ SECRET_KEY = 'django-insecure--nmjjr^21)u-qnjh-_0s_-=3r#2ksnr=64ys3)3_zlx67y-(n3
 GOOGLE_RECAPTCHA_PRIVATE_KEY = '6LeAI5gpAAAAAGw2k2bwppdaC8uygIR_Yk6rI1T6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+# ALLOWED_HOSTS = ["*"]
 
-ALLOWED_HOSTS = ["*", "hypermediapro.com", "www.hypermediapro.com"]
+ALLOWED_HOSTS = ["hypermediapro.com", "www.hypermediapro.com"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -119,16 +120,23 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+# STATIC_URL = 'static/'
+# MEDIA_URL = 'media/'
+#
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static/'
+# ]
+#
+# MEDIA_ROOT = BASE_DIR / 'media/'
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATIC_URL = 'static/'
-MEDIA_URL = 'media/'
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Typically used in production with collectstatic
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static/'
-]
-
-MEDIA_ROOT = BASE_DIR / 'media/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 

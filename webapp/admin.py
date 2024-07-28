@@ -76,7 +76,8 @@ class ProjectImagesAdmin(admin.ModelAdmin):
         update_slug_from_image(obj, image_field, slug_field)
 
 class ProjectModelAdmin(admin.ModelAdmin):
-    list_display = ('name', 'is_home_page',)
+    list_display = ('name', 'is_home_page', 'is_ugc')
+    list_filter = ('is_ugc', )
 
 class ProjectVideosAdmin(admin.ModelAdmin):
     list_display = ('name', 'project_name')

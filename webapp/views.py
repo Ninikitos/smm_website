@@ -58,6 +58,21 @@ class PortfolioJsonView(View):
         return JsonResponse({'data': projects, 'max': max_size, 'min': projects_size}, safe=False)
 
 
+def ugc(request):
+    return render(request, 'webapp/ugc.html', {})
+
+
+class UGCJsonView(View):
+    def get(self, request, *args, **kwargs):
+        upper = kwargs.get('num_projects')
+        lower = upper - 4
+        projects_qs = ProjectModel.objects.filter(is_ugc=True)
+        projects = list(projects_qs.values()[lower:upper])
+        projects_size = projects_qs.count()
+        max_size = upper >= projects_size
+        return JsonResponse({'data': projects, 'max': max_size, 'min': projects_size}, safe=False)
+
+
 def project_detail(request, slug):
     project = ProjectModel.objects.get(slug=slug)
     images = ProjectImagesModel.objects.filter(project=project)

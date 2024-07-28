@@ -117,6 +117,7 @@ class ProjectModel(models.Model):
     video_content_description = models.TextField(default="")
     media_stat_content_description = models.TextField(default="")
     is_home_page = models.BooleanField(default=False, null=True)
+    is_ugc = models.BooleanField(default=False, null=True)
 
     def __str__(self):
         return self.name
